@@ -1,9 +1,10 @@
 #include "class.h"
 
 Actuator led(13);
-AnalogSensor cds(A3, 500);
+Actuator pump();
 
-int a = 0;
+AnalogSensor cds(A3, 500);
+AnalogSensor water(A3, 500);
 
 void setup()
 {
@@ -13,7 +14,7 @@ void setup()
 
 void loop()
 {
-  led.write(a%2 == 0);
+  led.write(cds.trigger());
   delay(100);
   a++;
 }
