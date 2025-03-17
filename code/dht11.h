@@ -3,7 +3,7 @@
 class Dht11
 {
 public:
-  Dht11(int pin, int t, int h): dht(pin, DHT11), t_thre{t}, h_thre{h} {}
+  Dht11(int pin, int t, int h): dht(pin, DHT11), t_thre(t), h_thre(h) {}
 
   void init() { dht.begin(); }
 
