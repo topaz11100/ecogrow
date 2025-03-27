@@ -3,7 +3,8 @@
 class Lcd
 {
 public:
-  Lcd(int col, int row): lcd(0x27, col, row) {}
+  Lcd(int col, int row):
+  lcd(0x27, col, row) {}
 
   void init()
   {
@@ -22,7 +23,7 @@ private:
   LiquidCrystal_I2C lcd;
 };
 
-Lcd lcd(16, 2);
+
 
 
 

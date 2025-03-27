@@ -3,7 +3,8 @@
 class Rtc
 {
 public:
-  Rtc(int dat, int clk, int rst): myWire(dat, clk, rst), rtc(myWire) {}
+  Rtc(int dat, int clk, int rst):
+  myWire(dat, clk, rst), rtc(myWire) {}
 
   void init()
   {
@@ -30,6 +31,4 @@ private:
   RtcDS1302<ThreeWire> rtc;
   RtcDateTime now;
 };
-
-Rtc rtc(6, 5, 7);
 

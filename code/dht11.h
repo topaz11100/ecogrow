@@ -3,7 +3,8 @@
 class Dht11
 {
 public:
-  Dht11(int pin, int t, int h): dht(pin, DHT11), t_thre(t), h_thre(h) {}
+  Dht11(int pin, int t, int h):
+  dht(pin, DHT11), t_thre(t), h_thre(h) {}
 
   void init() { dht.begin(); }
 
@@ -37,8 +38,6 @@ private:
   int temp = 25, humi = 30;
   int t_thre, h_thre;
 };
-
-Dht11 dht11(A0, 30, 60);
 
 
 
