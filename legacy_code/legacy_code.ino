@@ -53,7 +53,7 @@ void loop() {
   // Serial.println(cds);           
   // CDS 조도센서값 주석처리 
   
-  if (cds>880){              
+  if (cds > 880){              
     digitalWrite(led,LOW);
   }
   else{
