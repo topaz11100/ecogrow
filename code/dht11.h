@@ -35,7 +35,7 @@ public:
 
 private:
   DHT dht;
-  int temp = 25, humi = 30;
+  int temp = 25, humi = 40;
   int t_thre, h_thre;
 };
 

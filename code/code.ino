@@ -27,7 +27,7 @@ AnalogSensor water_sensor(WAT_SEN, 500);
 
 Dht11 dht11(DHT, 30, 60);
 
-Rtc rtc(RTC_DAT, RTC_CLK, RTC_RST);
+//Rtc rtc(RTC_DAT, RTC_CLK, RTC_RST);
 
 Lcd lcd(LCD_COL, LCD_ROW);
 
@@ -38,7 +38,7 @@ void sensor_init()
   fan.init();
   air.init();
   dht11.init();
-  rtc.init();
+  //rtc.init();
   lcd.init();
 }
 
@@ -66,8 +66,8 @@ void loop()
   lcd.print(dht11.weather_str(), 0, 0);
 
   //시간
-  rtc.update();
-  lcd.print(rtc.now_time(), 0, 1);
+  //rtc.update();
+  //lcd.print(rtc.now_time(), 0, 1);
 }
 
 
