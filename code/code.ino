@@ -1,8 +1,8 @@
 #include "Actuator.h"
 #include "AnalogSensor.h"
-#include "dht11.h"
+#include "mydht.h"
 #include "lcd.h"
-#include "rtc_ds1302.h"
+//#include "rtc_ds1302.h"
 
 #define LED 27
 #define WAT 9
@@ -20,12 +20,12 @@
 Actuator led(LED);
 Actuator water(WAT);
 Actuator fan(FAN);
-Actuator air(AIR);
+//Actuator air(AIR);
 
 AnalogSensor cds(CDS, 500);
 AnalogSensor water_sensor(WAT_SEN, 500);
 
-Dht11 dht11(DHT, 30, 60);
+mydht dht(DHT, 30, 60);
 
 //Rtc rtc(RTC_DAT, RTC_CLK, RTC_RST);
 
@@ -36,8 +36,8 @@ void sensor_init()
   led.init();
   water.init();
   fan.init();
-  air.init();
-  dht11.init();
+  //air.init();
+  dht.init();
   //rtc.init();
   lcd.init();
 }
@@ -55,15 +55,15 @@ void loop()
   led.write(cds.trigger());
 
   //물 공기펌프
-  air.write(1);
+  //air.write(1);
 
   //수위
   water.write(water_sensor.trigger());
 
   //온습도
-  dht11.update();
-  fan.write(dht11.check_weather());
-  lcd.print(dht11.weather_str(), 0, 0);
+  dht.update();
+  fan.write(dht.check_weather());
+  lcd.print(dht.weather_str(), 0, 0);
 
   //시간
   //rtc.update();
