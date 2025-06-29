@@ -55,7 +55,7 @@ void loop()
   led.write(cds.trigger());
 
   //물 공기펌프
-  //air.write(1);
+  air.write(1);
 
   //수위
   water.write(water_sensor.trigger());
